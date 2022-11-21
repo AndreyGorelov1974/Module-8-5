@@ -70,8 +70,6 @@ int main() {
     }
     
     float averageTempo = std::round(elapsedSeconds / (float)numberKilometers);
-
-    std::cout << elapsedSeconds / (float)numberKilometers;
-        
+            
     std::cout << "Твой средний темп за тренировку: " << (int)averageTempo / 60 << " мин. " << (int)averageTempo % 60 << " сек." << std::endl;
 }
