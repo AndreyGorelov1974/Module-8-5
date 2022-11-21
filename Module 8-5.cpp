@@ -33,3 +33,43 @@
 
 Что оценивается
 Важно, чтобы время среднего темпа было выведено в формате «минуты и секунды», как в примере.*/
+
+#include <cmath>
+#include <iostream>
+#include <Windows.h>
+
+
+int main() {
+    
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    std::cout << "Привет, Сэм! Сколько километров ты сегодня пробежал? ";
+    int numberKilometers;
+    std::cin >> numberKilometers;
+    while (numberKilometers < 0) {
+        std::cout << "Количество километров должно быть больше 0. Введите снова: ";
+        std::cin >> numberKilometers;
+    }
+
+    int elapsedKilometers = 1;
+    float  elapsedSeconds = 0.0;
+
+    while (elapsedKilometers <= numberKilometers) {
+
+        std::cout << "Какой у тебя был темп на километре " << elapsedKilometers << "?";
+
+        int secondsPerKilometr;
+        std::cin >> secondsPerKilometr;
+        while (secondsPerKilometr < 0) {
+            std::cout << "Количество секунд должно быть больше 0. Введите снова: ";
+            std::cin >> secondsPerKilometr;
+        }
+        elapsedSeconds += secondsPerKilometr;
+        elapsedKilometers++;
+    }
+    
+    float averageTempo = std::round(elapsedSeconds / (float)numberKilometers);
+        
+    std::cout << "Твой средний темп за тренировку: " << (int)averageTempo / 60 << " мин. " << (int)averageTempo % 60 << " сек." << std::endl;
+}
