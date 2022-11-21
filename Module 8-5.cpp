@@ -57,7 +57,7 @@ int main() {
 
     while (elapsedKilometers <= numberKilometers) {
 
-        std::cout << "Какой у тебя был темп на километре " << elapsedKilometers << "?";
+        std::cout << "Какой у тебя был темп на километре " << elapsedKilometers << "? ";
 
         int secondsPerKilometr;
         std::cin >> secondsPerKilometr;
